@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<body>
+    <form action="Proses.html" method="post">
+        <table width="400" align="left" style="border:2px solid black">
+            <tr>
+                <td colspan="2" align="left_top">
+                    <h2>
+                        <b>
+                            Form Tambah Data User
+                        </b>
+                    </h2>
+
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    Nama
+                </td>
+                <td>
+                    <input type="Nama" name="" required oninvalid="this.setCustomValidity('Name is required!!!')"
+                        oninput="this.setCustomValidity('')">
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    Address
+                </td>
+                <td>
+                    <input type=" " alamat="" required oninvalid="this.setCustomValidity('Address is required!!!')"
+                        oninput="this.setCustomValidity('')">
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    Email
+                </td>
+                <td>
+                    <input type="email" email="" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                        oninvalid="this.setCustomValidity('Sertakan \'@\' pada alamat email ini.')"
+                        oninput="this.setCustomValidity('')">
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    Home Page
+                </td>
+                <td>
+                    <input type=" " email="" required oninvalid="this.setCustomValidity('Address is required!!!')"
+                        oninput="this.setCustomValidity('')">
+                </td>
+            </tr>
+            <tr>
+                <td align="left">
+                    Birthday
+                </td>
+                <td>
+                    <input type="date" birthday="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Favorit Color
+                </td>
+                <td>
+                    <input type="color" color="">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    IPK
+                </td>
+                <td>
+                    <input type="number" ipk="" min="0" max="4" step="0.1" value="0" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Phone Number
+                </td>
+                <td>
+                    <input type="tel" phone="" required pattern="\d{3}-\d{7,10}"
+                        title="Gunakan format ###-####### dengan 3 angka di depan strip dan 7-10 angka di belakang.">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div align="right" style="margin-top:25px;">
+                        <button>add</button>
+                    </div>
+                </td>
+            </tr>
+</body>
