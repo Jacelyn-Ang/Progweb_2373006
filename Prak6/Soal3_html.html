@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2373006 Jacelyn Ang</title>
+    <style>
+        body {
+            text-align: left;
+        }
+
+        .container {
+            width: 800px;
+            height: 600px;
+            display: flex;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 40px;
+            height: 50px;
+            background-color: orange;
+            border: 1px solid white;
+        }
+
+        .kosong {
+            background-color: transparent;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="tinggi">Tinggi Piramida</label>
+    <input type="text" id="tinggi">
+    <br>
+    <button onclick="Piramida()">Proses</button>
+    <br><br>
+    <div id="piramid-container"></div>
+
+    <script>
+        function Piramida() {
+            var tinggi = document.getElementById('tinggi').value;
+            var container = document.getElementById('piramid-container');
+
+            container.innerHTML = '';
+
+            if (tinggi === '' || isNaN(tinggi)) {
+                alert('Tolong input nomor yang valid');
+                return;
+            }
+
+            tinggi = parseInt(tinggi);
+            var kotak = "<table>";
+
+            for (var i = 0; i < tinggi; i++) {
+                kotak += "<tr>";
+
+                for (var a = 0; a < tinggi - i - 1; a++) {
+                    kotak += "<td class='kosong'></td>";
+                }
+
+                for (var a = 0; a < 2 * i + 1; a++) {
+                    kotak += "<td></td>";
+                }
+
+                kotak += "</tr>";
+            }
+
+            kotak += "</table>";
+            container.innerHTML = kotak;
+        }
+    </script>
+
+</body>
+
+</html>

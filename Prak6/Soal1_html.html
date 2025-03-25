@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        2373006_Jacelyn Ang
+    </title>
+    <style>
+        angka{
+            text-align: left;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: medium;
+        }
+
+        tabel{
+            border: 2px solid black;
+            border-collapse: collapse;
+            border-width: 300%;
+        }
+        td{
+            width:60px;
+            height: 50px;
+            text-align: center;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table width="33.5%">
+        <tr>
+            <td class="angka">
+                <label for="angka1">Angka pertama : </label>
+                <input type="text" id="angka1">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="angka2">Angka kedua  &nbsp;&nbsp;&nbsp;: </label>
+                <input type="text" id="angka2">
+            </td>
+        </tr>
+    </table>
+    <button onClick="hitung()">Count</button>
+    <table>
+        <tr>
+            <td id="summ1"></td>
+            <td>+</td>
+            <td id="summ2"></td>
+            <td>=</td>
+            <td id="summtty"></td>
+        </tr>
+        <tr>
+            <td id="minn1"></td>
+            <td>-</td>
+            <td id="minn2"></td>
+            <td>=</td>
+            <td id="mmtty"></td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+    function hitung(){
+        var angka1 = document.getElementById("angka1").value;
+        var angka2 = document.getElementById("angka2").value;
+        var hasil1=parseInt(angka1);
+        var hasil2=parseInt(angka2);
+
+        document.getElementById("summ1").innerHTML = hasil1;
+        document.getElementById("summ2").innerHTML = hasil2;
+        document.getElementById("summtty").innerHTML = hasil1+hasil2;
+
+        document.getElementById("minn1").innerHTML = hasil1;
+        document.getElementById("minn2").innerHTML = hasil2;
+        document.getElementById("mmtty").innerHTML = hasil1-hasil2;
+        
+    }
+    </script>
+</body>
+
+</html>

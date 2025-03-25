@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373006_Jacelyn Ang</title>
+    <style>
+        table {
+            width: 100%;
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-border {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+
+        .corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 5px solid #FF0000;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        .top-left {
+            top: 0;
+            left: 0;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .top-right {
+            top: 0;
+            right: 0;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .bottom-left {
+            bottom: 0;
+            left: 0;
+            border-right: none;
+            border-top: none;
+        }
+
+        .bottom-right {
+            bottom: 0;
+            right: 0;
+            border-left: none;
+            border-top: none;
+        }
+
+        .container:hover .corner {
+            border-color: #FF00FF;
+        }
+
+        .arrow {
+            font-size: 24px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <div class="container">
+                    <img src="a.jpg" alt="Bintang" width="100">
+                    <div class="corner top-left"></div>
+                    <div class="corner top-right"></div>
+                    <div class="corner bottom-left"></div>
+                    <div class="corner bottom-right"></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

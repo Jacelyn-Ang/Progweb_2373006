@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        2373006_Jacelyn Ang
+    </title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid black;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        label {
+            font-weight: bold;
+            color: blue;
+        }
+
+        input, select, button {
+            width: 95%;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: white;
+            color: blue;
+            border: 1px solid gray;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td><label for="input">Input :</label></td>
+                <td><input type="text" id="input"></td>
+            </tr>
+            <tr>
+                <td><label for="output">Output :</label></td>
+                <td><input type="text" id="output" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <select id="konversi">
+                        <option value="decimal-biner">decimal-biner</option>
+                        <option value="biner-decimal">biner-decimal</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="konversiBilangan()">PROSES</button>
+                    <button onclick="resetForm()">RESET</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <script>
+        function decimalToBinary(decimal) {
+            return decimal.toString(2).padStart(8, '0');
+        }
+
+        function binaryToDecimal(binary) {
+            return parseInt(binary, 2);
+        }
+
+        function konversiBilangan() {
+            var inputVal = document.getElementById("input").value.trim();
+            var konversi = document.getElementById("konversi").value;
+            var output = document.getElementById("output");
+
+            if (konversi === "decimal-biner") {
+                var num = parseInt(inputVal);
+                if (isNaN(num) || num < 0 || num > 255) {
+                    alert("Masukkan angka 0 - 255 untuk konversi Decimal ke Biner!");
+                    return;
+                }
+                output.value = decimalToBinary(num);
+            } else if (konversi === "biner-decimal") {
+                if (!/^[01]{8}$/.test(inputVal)) {
+                    alert("Masukkan angka biner 8 digit (0 atau 1)!");
+                    return;
+                }
+                output.value = binaryToDecimal(inputVal);
+            }
+        }
+
+        function resetForm() {
+            document.getElementById("input").value = "";
+            document.getElementById("output").value = "";
+        }
+    </script>
+</body>
+
+</html>

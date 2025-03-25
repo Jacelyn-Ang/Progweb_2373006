@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2373006 Jacelyn Ang</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            width: 50px;
+            height: 30px;
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hasil"></div>
+
+    <script type="text/javascript">
+        function tabelperkalian() {
+            var userNumber;
+            do {
+                userNumber = prompt("A Number?");
+                if (userNumber === null) return;
+            } while (isNaN(userNumber) || userNumber.trim() === '');
+
+            userNumber = parseInt(userNumber);
+            var hasilDiv = document.querySelector('.hasil');
+            hasilDiv.innerHTML = '';
+
+            var table = document.createElement('table');
+
+            for (var i = 1; i <= userNumber; i++) {
+                var row = document.createElement('tr');
+
+                var cell1 = document.createElement('td');
+                cell1.textContent = i;
+                row.appendChild(cell1);
+
+                var cell2 = document.createElement('td');
+                cell2.textContent = "x";
+                row.appendChild(cell2);
+
+                var cell3 = document.createElement('td');
+                cell3.textContent = userNumber;
+                row.appendChild(cell3);
+
+                var cell4 = document.createElement('td');
+                cell4.textContent = "=";
+                row.appendChild(cell4);
+
+                var cell5 = document.createElement('td');
+                cell5.textContent = i * userNumber;
+                row.appendChild(cell5);
+
+                table.appendChild(row);
+            }
+
+            hasilDiv.appendChild(table);
+        }
+
+        window.onload = tabelperkalian;
+    </script>
+
+</body>
+
+</html>
